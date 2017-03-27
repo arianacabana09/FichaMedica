@@ -4,33 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/x-icon" href="img/lab.png"/>
+  <link rel="stylesheet" href="css\main.css">
   <title>Clinica Lab</title>
 </head>
 <body>
+  <h1>CLINICA LAB</h1>
   <form id="formulario" >
     <label name="nombre"> Nombre </label>
-    <input type="text" name="nombre" id="nombre" required></input>
-    <br>
+    <input type="text" class="input-registro" id="nombre" placeholder="Ingrese nombre" required></input>
+    <br><span></span><br>
     <label name="apellido"> Apellido </label>
-    <input type="text" name="apellido" id="apellido" required/>
-    <br>
+    <input type="text" class="input-registro"  id="apellido" placeholder="Ingrese apellido" required/>
+    <br><span></span><br>
     <label name="edad"> Edad </label>
-    <input type="Number" name="edad" min="0" id="edad" required/>
-    <br>
+    <input type="text" class="input-registro" min="0" id="edad" placeholder="Ingrese edad" required/>
+    <br><span></span><br>
     <label name="genero"> Genero </label>
-    <input type="text" name="genero" id="genero" required/>
-    <br>
+    <input type="text" class="input-registro" name="genero" id="genero" required/>
+    <br><span></span><br>
     <label name="ciudad"> Ciudad </label>
-    <input type="text" name="ciudad" id="ciudad" required/>
-    <br>
+    <input type="text" class="input-registro" name="ciudad" id="ciudad" placeholder="Ingrese ciudad" required/>
+    <br><span></span><br>
     <label name="pais"> País </label>
-    <input type="text" id="pais" required=""/>
-    <br>
+    <input type="text" class="input-registro" id="pais" placeholder="Ingrese pais" required=""/>
+    <br><span></span><br>
     <button type="reset" name="button" id="enviar">Enviar</button>
-  <p>
-  <div id= "mostrar"> </div>
-  </form>
-  <script type="text/javascript" src="js\app2.js">
-  </script>
-</body>
+    <p>
+    </form>
+    <div id= "mostrar"> </div>
+    <script type="text/javascript" src="js\app2.js"></script>
+  </body>
 </html>
