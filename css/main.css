@@ -1,3 +1,20 @@
+html{
+  font-family: 'Open Sans';
+  background-image: url("../img/fondo3.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.bienvenido-paciente{
+  align-content: center;
+}
+
+.botones {
+  padding-bottom: 20px;
+}
+.dato{
+  color: black;
+}
+
 .un-paciente{
   border: 2px solid black;
   display: inline-block;
@@ -8,20 +25,12 @@
   margin: 3px 0;
 }
 
-span{
-  font-family: sans-serif;
-  color: red;
-}
-
 body{
-  background-image: url("../img/fondo3.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+
   text-align: center;
   padding-top: 80px;
-  font-family: fantasy;
-
 }
+
 form{
   display: inline-block;
   text-align: left;
@@ -29,4 +38,14 @@ form{
 button{
   margin: 0 auto;
   display: block;
+  font-weight:bold;
+  color:white;
+  background:#638cb5;
+  border:2px;
+
+}
+span{
+  font-family: sans-serif;
+  color: red;
+  margin-left: 60px;
 }

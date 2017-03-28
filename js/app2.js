@@ -1,3 +1,4 @@
+//funcion crear div para cada paciente
 function Paciente(nombre,apellido,edad,genero,ciudad,pais) {
   this.name = nombre;
   this.lastname = apellido;
@@ -28,33 +29,37 @@ window.addEventListener('load',function(){
     var city = document.getElementById("ciudad");
     var country = document.getElementById("pais");
 
-    if (name.value == "" || lastname.value == "" || age.value == "" || country.value == ""){
-      alert("Estos Datos son obligatorios \n Nombre \n apellido \n edad \n pais");
+    if (name.value == "" || lastname.value == "" || age.value == "" || gender.value == "" || city.value == "" || country.value == ""){
+      alert("Estos Datos son obligatorios \n Nombre \n apellido \n edad \n genero \n ciudad \n pais");
     }
     else{
       var registro = new Paciente(name.value,lastname.value,age.value,gender.value,city.value,country.value);
-      registros.push(registro);
-      show.innerHTML += registro.ficha();
+      //registros.push(registro);
+      console.log(registro);
+      localStorage.setItem("newPaciente",JSON.stringify(registro));
+      //show.innerHTML += registro.ficha();
+      window.location="paciente.html";
       document.getElementById("formulario").reset();
     }
   });
 });
 
-// validando inputText
 var nombre = document.getElementById('nombre');
 var apellido = document.getElementById('apellido');
 
+// validando inputText
 var soloLetras = function(e){
   var codigoTecla = e.keyCode;
   console.log(codigoTecla);
   if ((codigoTecla >= 97 && codigoTecla <= 122) || (codigoTecla >=65 && codigoTecla <= 90) || codigoTecla == 39 || codigoTecla == 32) {
     return true;
-  }
-  else {
+  } else{
+    this.nextElementSibling.nextElementSibling.innerText = "Este campo solo permite letras";
     return false;
   }
 }
-//validando numeros 48 57
+
+//validando numeros
 var soloNumeros = function(e){
   var codeTecla = e.keyCode;
   console.log(codeTecla);
@@ -62,6 +67,7 @@ var soloNumeros = function(e){
     return true;
   }
   else {
+    this.nextElementSibling.nextElementSibling.innerText = "Este campo solo permite numeros de dos digitos";
     return false;
   }
 }
@@ -72,25 +78,27 @@ var validaInputs = function(){
   if(this.value.trim().length==0){
     this.value="";
     this.nextElementSibling.nextElementSibling.innerText="*Este campo es obligatorio"
-  }
-  else {
+  } else{
     this.nextElementSibling.nextElementSibling.innerText="";
   }
 
-  // var datoCorrecto = this.value.charAt(0).toUpperCase()+this.value.substring(1).toLowerCase();
-  // this.value = datoCorrecto;
+  /* var datoCorrecto = this.value.charAt(0).toUpperCase()+this.value.substring(1).toLowerCase();
+    this.value = datoCorrecto;*/
+
+  //Mayúscula a cada palabra
   var arrDato = this.value.split(" ");
   var datoConMayus = "";
   for (var i = 0; i < arrDato.length; i++){
     datoConMayus += arrDato[i].charAt(0).toUpperCase()+arrDato[i].substring(1).toLowerCase()+" ";
   }
-  this.value = datoConMayus;
+  this.value = datoConMayus.trim();
 }
 
 for(var i = 0; i < inputs.length; i++){
   inputs[i].onblur = validaInputs;
 }
 
+//asignando funciones
 edad.onkeypress = soloNumeros;
 nombre.onkeypress = soloLetras;
 apellido.onkeypress = soloLetras;

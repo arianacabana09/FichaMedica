@@ -18,3 +18,33 @@ Output(en el HTML):
 -TIP: elabora un formulario para obtener todos los datos de los pacientes, después,
 por cada paciente crea un nuevo objeto que esté almecenado en un array
 -TIP 2: por cada paciente nuevo que se ingrese crea un div sonde estén contenidos sus datos :) */
+*****************************************************************************
+.un-paciente{
+	border: 2px solid black;
+	display: inline-block;
+	margin: 20px 0 0 20px;
+	padding: 15px;
+}
+.un-paciente p {
+	margin: 3px 0;
+}
+body{
+	text-align: center;
+	padding-top: 80px;
+}
+form{
+	display: inline-block;
+	text-align: left;
+}
+button{
+	margin: 0 auto;
+	display: block;
+}
+label{
+	display: inline-block;
+	width: 60px;
+}
+span{
+	color: red;
+	margin-left: 60px;
+}
